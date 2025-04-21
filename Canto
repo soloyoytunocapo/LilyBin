@@ -1,0 +1,37 @@
+\version "2.24.2"
+\header {
+  title = "Cántico Santa Clara"
+  composer = "Arr. ChatGPT"
+}
+\layout {
+  indent = 0
+  \context {
+    \ChordNames
+    \override ChordName #'font-size = #2
+  }
+}
+\score {
+  <<
+    \new ChordNames {
+      \set chordChanges = ##t
+      \chordmode {
+        g4 d4 c4 d4
+        g4 d4 c4 d4
+        g4 c4 g4 d4
+        c4 g4 d4 g4
+      }
+    }
+    \new Staff {
+      \tempo 4 = 150
+      \key g \major
+      \time 4/4
+      % Verso y coro: una nota por pulso, frase en G mayor
+      b4 a4 g4 a4 |
+      b4 a4 g4 a4 |
+      b4 c5 b4 a4 |
+      g4 fis4 g4 d4 ||
+    }
+  >>
+  \layout { }
+  \midi { }
+}
